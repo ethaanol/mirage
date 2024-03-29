@@ -3,8 +3,10 @@ package dev.mirage.attribute.attributes.impl;
 import dev.mirage.attribute.attributes.Attribute;
 import dev.mirage.models.FieldModel;
 import dev.mirage.pool.ConstantPool;
+import lombok.Getter;
 
 public class ConstantValueAttribute implements Attribute {
+    @Getter
     private FieldModel model;
     private ConstantPool pool;
 
@@ -30,9 +32,5 @@ public class ConstantValueAttribute implements Attribute {
             return new byte[]{(byte) ((valueIndex >> 8) & 0xff), (byte) (valueIndex & 0xff)};
         }
         return new byte[]{};
-    }
-
-    public FieldModel getModel() {
-        return model;
     }
 }

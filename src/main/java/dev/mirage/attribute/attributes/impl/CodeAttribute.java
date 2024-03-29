@@ -9,6 +9,7 @@ import dev.mirage.models.constants.Opcodes;
 import dev.mirage.pool.ConstantPool;
 import dev.mirage.pool.entry.entries.*;
 import dev.mirage.util.UnsignedStreamWrapper;
+import lombok.Getter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CodeAttribute implements Attribute {
+    @Getter
     private MethodModel model;
     private ConstantPool pool;
     private List<JumpEntry> jumps = new ArrayList<>();
@@ -180,9 +182,5 @@ public class CodeAttribute implements Attribute {
                 } else throw new IllegalArgumentException("bleak : value for ldc isn't of type `java/lang/String`.");
             }
         }
-    }
-
-    public MethodModel getModel() {
-        return model;
     }
 }

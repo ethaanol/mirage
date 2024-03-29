@@ -3,6 +3,7 @@ package dev.mirage.pool.entry.entries;
 import dev.mirage.pool.entry.PoolEntry;
 import dev.mirage.pool.entry.constants.EntryConstants;
 import dev.mirage.util.UnsignedStreamWrapper;
+import lombok.Getter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -10,6 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 public class UTFEntry implements PoolEntry {
     private ByteArrayOutputStream stream = new ByteArrayOutputStream();
+    @Getter
     private String value;
 
     public UTFEntry(String value) {
@@ -32,9 +34,5 @@ public class UTFEntry implements PoolEntry {
             e.printStackTrace();
         }
         return stream.toByteArray();
-    }
-
-    public String getValue() {
-        return value;
     }
 }

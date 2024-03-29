@@ -3,12 +3,14 @@ package dev.mirage.pool.entry.entries;
 import dev.mirage.pool.entry.PoolEntry;
 import dev.mirage.pool.entry.constants.EntryConstants;
 import dev.mirage.util.UnsignedStreamWrapper;
+import lombok.Getter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class IntegerEntry implements PoolEntry {
     private ByteArrayOutputStream stream = new ByteArrayOutputStream();
+    @Getter
     private int value;
 
     public IntegerEntry(int value) {
@@ -24,9 +26,5 @@ public class IntegerEntry implements PoolEntry {
             e.printStackTrace();
         }
         return stream.toByteArray();
-    }
-
-    public int getValue() {
-        return value;
     }
 }

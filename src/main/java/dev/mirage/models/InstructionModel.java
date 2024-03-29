@@ -1,7 +1,10 @@
 package dev.mirage.models;
 
+import lombok.Getter;
+
+@Getter
 public class InstructionModel {
-    private byte opcode;
+    private final byte opcode;
     private Object value;
     private LabelModel label;
 
@@ -29,29 +32,5 @@ public class InstructionModel {
     public InstructionModel(byte opcode, LabelModel target) {
         this.opcode = opcode;
         this.target = target;
-    }
-
-    public LabelModel getTarget() {
-        return target;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public Object getValue() {
-        return value;
-    }
-
-    public byte getOpcode() {
-        return opcode;
     }
 }

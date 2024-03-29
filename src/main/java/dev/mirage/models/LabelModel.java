@@ -1,16 +1,10 @@
 package dev.mirage.models;
 
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
 public class LabelModel {
+    @Getter
+    @Setter
     private int position;
-
-    public int getPosition() {
-        return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
-    }
 }

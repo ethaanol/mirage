@@ -1,10 +1,14 @@
 package dev.mirage.models;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.io.ByteArrayOutputStream;
+
+@Getter
+@Setter
+@AllArgsConstructor
 public class ClassModel {
     private String name;
     private String superClass;
@@ -17,45 +21,5 @@ public class ClassModel {
         this.superClass = superClass;
         this.access = access;
         this.version = version;
-    }
-
-    public int getVersion() {
-        return version;
-    }
-
-    public void setVersion(int version) {
-        this.version = version;
-    }
-
-    public ByteArrayOutputStream getStream() {
-        return stream;
-    }
-
-    public void setStream(ByteArrayOutputStream stream) {
-        this.stream = stream;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getSuperClass() {
-        return superClass;
-    }
-
-    public int getAccess() {
-        return access;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setSuperClass(String superClass) {
-        this.superClass = superClass;
-    }
-
-    public void setAccess(int access) {
-        this.access = access;
     }
 }

@@ -1,8 +1,11 @@
 package dev.mirage.models;
 
+import lombok.Getter;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Getter
 public class MethodModel {
     private String name, desc;
     private int access;
@@ -16,10 +19,6 @@ public class MethodModel {
         this.access = access;
     }
 
-    public List<LabelModel> getLabels() {
-        return labels;
-    }
-
     public void attach(InstructionModel model) {
         instructions.add(model);
     }
@@ -30,21 +29,5 @@ public class MethodModel {
 
     public void attach(LabelModel label) {
         labels.add(label);
-    }
-
-    public List<InstructionModel> getInstructions() {
-        return instructions;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public int getAccess() {
-        return access;
     }
 }

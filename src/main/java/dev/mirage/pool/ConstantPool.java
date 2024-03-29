@@ -4,16 +4,17 @@ import dev.mirage.pool.entry.PoolEntry;
 import dev.mirage.pool.entry.entries.IntegerEntry;
 import dev.mirage.pool.entry.entries.StringEntry;
 import dev.mirage.pool.entry.entries.UTFEntry;
-import dev.mirage.util.UnsignedStreamWrapper;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 public class ConstantPool {
+    @Setter
+    @Getter
     private List<PoolEntry> entries = new LinkedList<>();
 
     public byte[] writePool() {
@@ -33,10 +34,6 @@ public class ConstantPool {
 
     public int getPoolCount() {
         return entries.size();
-    }
-
-    public List<PoolEntry> getEntries() {
-        return entries;
     }
 
     public int addEntry(PoolEntry entry) {
@@ -86,9 +83,5 @@ public class ConstantPool {
         }
         entries.add(new IntegerEntry(value));
         return entryCount;
-    }
-
-    public void setEntries(List<PoolEntry> entries) {
-        this.entries = entries;
     }
 }

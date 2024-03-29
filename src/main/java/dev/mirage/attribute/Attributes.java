@@ -5,6 +5,7 @@ import dev.mirage.attribute.attributes.impl.CodeAttribute;
 import dev.mirage.attribute.attributes.impl.ConstantValueAttribute;
 import dev.mirage.pool.ConstantPool;
 import dev.mirage.util.UnsignedStreamWrapper;
+import lombok.Getter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Attributes {
+    @Getter
     private final List<Attribute> attributes = new ArrayList<>();
     private ConstantPool pool;
 
@@ -42,9 +44,5 @@ public class Attributes {
         });
 
         return stream.toByteArray();
-    }
-
-    public List<Attribute> getAttributes() {
-        return attributes;
     }
 }
