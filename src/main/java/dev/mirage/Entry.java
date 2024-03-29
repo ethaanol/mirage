@@ -30,6 +30,7 @@ public class Entry {
         LabelModel lbl = new LabelModel();
         method.attach(new InstructionModel(Opcodes.GOTO, lbl));
 
+        // 0xBA - new label opcode
         method.attach(new InstructionModel((byte) 0xBA, lbl));
         method.attach(new InstructionModel(Opcodes.LDC, 18));
 
