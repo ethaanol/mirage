@@ -10,10 +10,15 @@ public class Opcodes {
     public static final byte BIPUSH = (byte) 0x10;
     public static final byte SIPUSH = (byte) 0x11;
     public static final byte INVOKESTATIC = (byte) 0xb8;
+    public static final byte INVOKESPECIAL = (byte) 0xb7;
     public static final byte INVOKEVIRTUAL = (byte) 0xb6;
     public static final byte GETSTATIC = (byte) 0xb2;
     public static final byte PUTSTATIC = (byte) 0xb3;
     public static final byte JMP_S = (byte) 0xCA;
+
+    public static final byte NEW = (byte) 0xbb;
+    public static final byte DUP = (byte) 0x59;
+    public static final byte ATHROW = (byte) 0xbf;
 
     // jumps
     public static final byte GOTO = (byte) 0xa7;

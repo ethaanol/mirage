@@ -102,7 +102,7 @@ public class GlobalModelReader {
                             bytesRead++;
 
                             switch (opcode) {
-                                case Opcodes.INVOKESTATIC, Opcodes.INVOKEVIRTUAL: {
+                                case Opcodes.INVOKESTATIC, Opcodes.INVOKEVIRTUAL, Opcodes.INVOKESPECIAL: {
                                     MethodRefEntry entry = (MethodRefEntry) pool.getEntries().get(stream.readUnsignedShort());
                                     bytesRead += 2;
 

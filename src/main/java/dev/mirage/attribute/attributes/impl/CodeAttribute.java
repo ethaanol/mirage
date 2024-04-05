@@ -57,7 +57,16 @@ public class CodeAttribute implements Attribute {
                                 codeWrapper.putUnsignedShort(insn.getDistance());
                                 break;
                             }
-                            case Opcodes.INVOKESTATIC, Opcodes.INVOKEVIRTUAL: {
+                            case Opcodes.NEW: {
+                                codeWrapper.putUnsignedByte(insn.getOpcode());
+
+                                int nameIndex = pool.requestUTF(insn.getValue().toString());
+                                int ownerIndex = pool.addEntry(new ClassEntry(nameIndex));
+
+                                codeWrapper.putUnsignedShort(ownerIndex);
+                                break;
+                            }
+                            case Opcodes.INVOKESTATIC, Opcodes.INVOKEVIRTUAL, Opcodes.INVOKESPECIAL: {
                                 codeWrapper.putUnsignedByte(insn.getOpcode());
 
                                 int nameIndex = pool.requestUTF(insn.getName());
@@ -99,12 +108,12 @@ public class CodeAttribute implements Attribute {
                                 insn.getTarget().setPosition(codeWrapper.size());
                                 break;
                             }
-                            case Opcodes.IRETURN, Opcodes.RETURN: {
+                            case Opcodes.IRETURN, Opcodes.RETURN, Opcodes.DUP, Opcodes.ATHROW: {
                                 codeWrapper.putUnsignedByte(insn.getOpcode());
                                 break;
                             }
                             default:
-                                throw new RuntimeException("mirage : unknown opcode (" + String.format("%02x", insn.getOpcode()) + ")");
+                                throw new RuntimeException("mirage : unknown opcode (0x" + String.format("%02x", insn.getOpcode()) + ")");
                         }
                     }
                 }

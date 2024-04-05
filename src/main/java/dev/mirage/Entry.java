@@ -30,15 +30,48 @@ public class Entry {
                 MethodConstants.PUBLIC | MethodConstants.STATIC
         );
 
+        main.attach(new InstructionModel[]{
+                new InstructionModel(
+                        Opcodes.GETSTATIC,
+                        "java/lang/System",
+                        "out",
+                        "Ljava/io/PrintStream;"
+                ),
+                new InstructionModel(Opcodes.LDC, "before goto invoke"),
+                new InstructionModel(
+                        Opcodes.INVOKEVIRTUAL,
+                        "java/io/PrintStream",
+                        "println",
+                        "(Ljava/lang/String;)V"
+                )
+        });
+
         // if the method with JMP_S isnt used the relative position can be completely random.
         // if used: 152 to jump to the method in front, -312 to jump to the method behind.
         main.attach(new InstructionModel[]{
-                new InstructionModel(Opcodes.JMP_S, (short) 152, true)
+                new InstructionModel(Opcodes.JMP_S, (short) (152 * 2), true)
         });
 
+        main.attach(new InstructionModel[]{
+                new InstructionModel(
+                        Opcodes.GETSTATIC,
+                        "java/lang/System",
+                        "out",
+                        "Ljava/io/PrintStream;"
+                ),
+                new InstructionModel(Opcodes.LDC, "after goto invoke"),
+                new InstructionModel(
+                        Opcodes.INVOKEVIRTUAL,
+                        "java/io/PrintStream",
+                        "println",
+                        "(Ljava/lang/String;)V"
+                )
+        });
+
+
         MethodModel model = new MethodModel(
-                "fuck",
-                 "()V",
+                "test1",
+                "()V",
                 MethodConstants.PUBLIC | MethodConstants.STATIC
         );
 
@@ -49,7 +82,7 @@ public class Entry {
                         "out",
                         "Ljava/io/PrintStream;"
                 ),
-                new InstructionModel(Opcodes.LDC, "eat this cock"),
+                new InstructionModel(Opcodes.LDC, "test1"),
                 new InstructionModel(
                         Opcodes.INVOKEVIRTUAL,
                         "java/io/PrintStream",
@@ -58,8 +91,44 @@ public class Entry {
                 )
         });
 
+        MethodModel model1 = new MethodModel(
+                "test2",
+                 "()V",
+                MethodConstants.PUBLIC | MethodConstants.STATIC
+        );
+
+        model1.attach(new InstructionModel[]{
+                new InstructionModel(
+                        Opcodes.GETSTATIC,
+                        "java/lang/System",
+                        "out",
+                        "Ljava/io/PrintStream;"
+                ),
+                new InstructionModel(Opcodes.LDC, "test2"),
+                new InstructionModel(
+                        Opcodes.INVOKEVIRTUAL,
+                        "java/io/PrintStream",
+                        "println",
+                        "(Ljava/lang/String;)V"
+                )
+        });
+
+        model1.attach(new InstructionModel[]{
+                new InstructionModel(Opcodes.NEW, "java/lang/Exception"),
+                new InstructionModel(Opcodes.DUP),
+                new InstructionModel(Opcodes.LDC, "woah"),
+                new InstructionModel(
+                        Opcodes.INVOKESPECIAL,
+                        "java/lang/Exception",
+                        "<init>",
+                        "(Ljava/lang/String;)V"
+                ),
+                new InstructionModel(Opcodes.ATHROW)
+        });
+
         klass.getMethods().add(main);
         klass.getMethods().add(model);
+        klass.getMethods().add(model1);
 
         IndividualModelWriter writer = new IndividualModelWriter(klass);
         writer.initiateModel();
