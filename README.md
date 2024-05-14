@@ -3,12 +3,15 @@ made by your beloved etho <br>
 accessibility focused bytecode manipulation library.
 
 # Story
+First of all, this project took a long time and no one in walmart is happy about it. <br>
+Or in other words: this **WILL** result in retaliation.
+
 So.. faceless leaked several private walmart projects after he left because of an argument. <br>
 Only 2 of these are known to be leaked, those being <a href="https://github.com/3000IQPlay/Ultimatum">Ultimatum</a> and the one that hit the hardest - <a href="https://github.com/WalmartSolutions/mirage">Mirage</a>, there could be more. <br>
 Mirage is a bytecode manipulation library mainly made for learning purposes, it had to be made FOSS because your favourite attention addict leaked it.
 
 It all started with faceless begging walmart to remove his name from every repo he was credited in (it was only 2 repos). <br>
-After walmart refused he said he was going to file a DMCA takedown it, etho told him to do it since he knew he would file a DMCA counter notice. <br>
+After walmart refused he said he was going to file a DMCA takedown, etho told him to do it since he knew he would file a DMCA counter notice. <br>
 Faceless never proceeded with this and continued to get trashed in every argument he started, eventually he got so mad he decided to start leaking walmart's private projects. <br>
 <br>
 This was based upon: **DMCA** which is under copyright law United States Code (USC) Title 17, Chapter 5, Section 512. <br>
