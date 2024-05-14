@@ -46,12 +46,6 @@ public class Entry {
                 )
         });
 
-        // if the method with JMP_S isnt used the relative position can be completely random.
-        // if used: 152 to jump to the method in front, -312 to jump to the method behind.
-        main.attach(new InstructionModel[]{
-                new InstructionModel(Opcodes.JMP_S, (short) (152 * 2), true)
-        });
-
         main.attach(new InstructionModel[]{
                 new InstructionModel(
                         Opcodes.GETSTATIC,
