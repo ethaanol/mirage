@@ -1,5 +1,5 @@
 <h1 align="center">Mirage</h1>
-made by your beloved etho
+made by your beloved etho <br>
 accessibility focused bytecode generation library.
 
 # Why?
