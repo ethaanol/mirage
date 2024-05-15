@@ -2,6 +2,15 @@
 made by your beloved etho <br>
 accessibility focused bytecode manipulation library.
 
+# Todo
+Still a bunch of stuff left, mainly:
+- support for `invokedynamic`
+- support for `lookupswitch` and `tableswitch`
+- support for inner classes
+- stackmap frame computations
+- stack & local max computations
+- better error handling
+
 # Story
 First of all, this project took a long time and no one in walmart is happy about it. <br>
 Or in other words: this **WILL** result in retaliation.
