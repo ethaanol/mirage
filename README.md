@@ -11,6 +11,8 @@ Still a bunch of stuff left, mainly:
 - stack & local max computations
 - better error handling
 
+oh right and the horrendous code.
+
 # Contributions
 As said in the segment above there are a still plenty of issues with this which need to be adressed.
 If you are willing to do so pull requests are always welcome.
