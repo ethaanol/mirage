@@ -17,10 +17,5 @@ oh right and the horrendous code.
 As said in the segment above there are a still plenty of issues with this which need to be adressed.
 If you are willing to do so pull requests are always welcome.
 
-<h2>Don't mind this part</h2>
-
-**DMCA** which is under copyright law United States Code (USC) Title 17, Chapter 5, Section 512. <br>
-DMCA USC 512 (c) (3)
-
 # Why?
 Hobby project, **this is not meant to replace objectweb's asm.**
